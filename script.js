@@ -39,10 +39,11 @@ const gameBoard = (() => {
             field.appendChild(paragraph)
 
             field.addEventListener('click', (e) => {
-                
-                placeMarker(index)
-                updateBoard()
-                displayController.checkSolution()
+                if(currentGameboard[index] === "") {
+                    placeMarker(index)
+                    updateBoard()
+                    displayController.checkSolution()
+                }
             })
 
             field.style.pointerEvents = "all"
@@ -56,11 +57,11 @@ const gameBoard = (() => {
     }
 
     const placeMarker = (position) => {
-        if(currentGameboard[position] === "") {
-            document.querySelector('.text-' + position).innerText = getCurrentTurn()
-            currentGameboard[position] = getCurrentTurn()
-            toggleTurn()
-        }
+        
+        document.querySelector('.text-' + position).innerText = getCurrentTurn()
+        currentGameboard[position] = getCurrentTurn()
+        toggleTurn()
+    
     
     }
 
@@ -134,7 +135,28 @@ const displayController = (() => {
             stopGame()
 
         
+        
         } else {
+            let count = 0
+            for (let index = 0; index < gameBoard.getCurrentGameBoard().length; index++) {
+                const element = gameBoard.getCurrentGameBoard()[index];
+                if(element == "x" || element == "o") {
+                    count+=1
+                    console.log(count)
+
+                }
+
+                if(count == 9) {
+                    const winnerDisplay = document.createElement('h2')
+                    winnerDisplay.innerText = 'TIE!!!'
+                    document.querySelector('.congratulation-display').appendChild(winnerDisplay)
+                    console.log('TIE!')
+                    stopGame()
+                    return
+                }
+                
+            }
+
             document.querySelector('.player-1-display').classList.toggle('turn')
             document.querySelector('.player-2-display').classList.toggle('turn')
         }
