@@ -1,0 +1,105 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.row {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.item {
+    border: 3px solid #2241ca;
+    width: 100px;
+    height: 100px;
+    background-color: #6780ef;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 60px;
+}
+
+div.hidden {
+    display: none;
+}
+
+form {
+    padding: 60px;
+    font-size: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    background-color: #6780ef;
+    color: white;
+    border-radius: 18px;
+}
+
+
+
+.players div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+input {
+    border: none;
+    outline: none;
+    height: 25px;
+    width: 250px;
+    border-radius: 4px;
+}
+
+.start {
+    font-size: 20px;
+    color: white;
+    background-color: transparent;
+    border: 2px solid white;
+    border-radius: 10px;
+    padding: 20px;
+    cursor: pointer;
+}
+
+.restart {
+    font-size: 18px;
+    margin-top: 20px;
+    background-color: transparent;
+    border: 6px solid #2241ca;
+    color: #2241ca;
+    border-radius: 20px;
+    padding: 20px 40px;
+    cursor: pointer;
+
+}
+.player-display {
+    display: flex;
+    gap: 150px;
+    margin-bottom: 10px;
+    font-size: 20px;
+    color: #2241ca;
+}
+
+.turn {
+    text-decoration: underline;
+}
+
+h2 {
+    margin: 20px;
+    color: #ffffff;
+    background-color: #2241ca;
+    border-radius: 4px;
+    padding: 20px;
+    text-align: center;
+}
